@@ -10,6 +10,7 @@ import shutil
 import logging
 import configparser
 import sys
+import sqlite3
 
 from jinja2 import Environment, ChoiceLoader, FileSystemLoader, PackageLoader
 import feedgenerator
@@ -430,7 +431,6 @@ def generate_search(articles, pages, db):
         path to sqlite file
 
     """
-    import sqlite3
 
     conn = sqlite3.connect(db)
     with conn:
